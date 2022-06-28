@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>NS BUFFOR</title>
+            <link id="favicon" rel="icon" type="image/x-icon" href="static/favicon.ico">
+            <link rel="stylesheet" href="static/styles.css">
+            
+        </head>
+        <body>
+            <div class="top_space">
+                <div class="logo">
+                    <div class="plant">Nowa Sól Plant</div>
+                </div>
+                <div class="totals">
+                    <div class="totalPRO">Total PRO:{{amount_of_row2.0}}</div>
+                    <div class="totalKTL">Total KTL:{{amount_of_row1.0}}</div>
+                </div>
+            </div>
+            <container>
+                <panel class="bot">
+                    <table id="table_buffor_2" class="table">
+                        <h5 class="PRO">BUFOR PRO</h5>
+                        <thead>
+                            <th>Lp</th>
+                            <th>NrPRM</th>
+                            <th>Nazwa detalu</th>
+                            <th>Ilość detali</th>
+                            <th>Ilość pojemników</th>
+                            <th>Ilość zawieszek</th>
+                            <th>Belek</th>    
+                        </thead>
+                        <tbody>
+                            
+                            {% for row in buffor2_view %}
+                            <tr>
+                                <td>{{row.0}}</td>
+                                <td>{{row.1}}</td>
+                                <td class="name">{{row.2}}</td>
+                                <td class="amount">{{row.5}} / <span class="total">{{row.8}}</span> </td>
+                                <td>{{row.6}}</td>
+                                <td>{{row.7}}</td>
+                                <td>{{row.3}}</td>
+                            </tr>
+                            
+                            {% endfor %}
+                        
+                        </tbody>
+                        
+                    </table>
+                </panel>
+            </container>
+            <container>
+                <panel class="top">
+                    <table id="table_buffor_1" class="table">
+                        <h5 class="KTL">BUFOR KTL</h5>
+                        <thead>
+                        <th>Lp</th>
+                        <th>NrPRM</th>
+                        <th>Nazwa detalu</th>
+                        <th>Ilość detali</th>
+                        <th>Ilość pojemników</th>
+                        <th>Ilość zawieszek</th>
+                        <th>Belek</th>
+                        </thead>
+                        <tbody>
+                            {% for row in buffor1_view %}
+                            <tr>
+                                <td>{{row.0}}</td>
+                                <td>{{row.1}}</td>
+                                <td class="name">{{row.2}}</td>
+                                <td class="amount">{{row.5}} / <span class="total">{{row.8}}</span> </td>
+                                <td>{{row.6}}</td>
+                                <td>{{row.7}}</td>
+                                <td>{{row.3}}</td>
+                            </tr>
+
+                            {% endfor %}
+                        </tbody>
+                        
+                    </table>
+                </panel>
+            </container>  
+        
+            <script type="text/javascript" src="static/script.js"></script>
+
+        </body>
